@@ -73,3 +73,13 @@ impl One for f64 {
         1f64
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn one() {
+        assert_eq!(i32::one(), 1i32);
+    }
+}

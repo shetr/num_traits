@@ -72,3 +72,13 @@ impl Zero for f64 {
         0f64
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn zero() {
+        assert_eq!(i32::zero(), 0i32);
+    }
+}
