@@ -1,13 +1,23 @@
 use std::ops::*;
 use std::cmp::*;
+use std::fmt::*;
+use std::hash::Hash;
 use zero::Zero;
 use one::One;
 use uabs::UAbs;
 
+// get some inspiration from Julia
+// what about Neg? it shouldn't be in unsigned nubers
+// think about the conversion operators
+// FromStr, FloatToInt, From / Into
+// conversion to some generic base for some types (probably only integers)
+// std::iter::Step for integers
+
 pub trait Number:  
-    Clone + Eq + Ord + Neg +
+    Clone + Hash + Eq + Ord + Neg +
     Add + Sub + Mul + Div + 
     AddAssign + SubAssign + MulAssign + DivAssign +
+    Binary + Debug + Display + LowerExp + UpperExp + LowerHex + UpperHex + Octal +
     Zero + One + UAbs
 {}
 
@@ -21,6 +31,7 @@ pub trait Integer:
 {}
 
 // TODO: rethink how to handle signed/unsigned
+//
 
 pub trait SInteger:
     Integer
@@ -29,6 +40,8 @@ pub trait SInteger:
 pub trait UInteger:
     Integer
 {}
+
+// primitive type trait shloud be implemented only for primitive types
 
 pub trait SInt:
     Copy + SInteger
