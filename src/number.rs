@@ -2,12 +2,13 @@ use std::ops::*;
 use std::cmp::*;
 use zero::Zero;
 use one::One;
+use uabs::UAbs;
 
 pub trait Number:  
     Clone + Eq + Ord + Neg +
     Add + Sub + Mul + Div + 
     AddAssign + SubAssign + MulAssign + DivAssign +
-    Zero + One
+    Zero + One + UAbs
 {}
 
 pub trait BinaryOps:
