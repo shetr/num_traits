@@ -78,8 +78,18 @@ impl One for f64 {
 mod tests {
     use super::*;
 
+    fn get_one<T: One>() -> T {
+        T::one()
+    }
+
     #[test]
     fn one() {
         assert_eq!(i32::one(), 1i32);
+    }
+
+    // try with some template function
+    #[test]
+    fn one_template() {
+        assert_eq!(get_one::<i32>(), 1i32);
     }
 }
