@@ -31,8 +31,7 @@ pub trait Number:
 
 pub trait BinaryOps:
     BitAnd + BitOr + BitXor + Shl<usize> + Shr<usize> +
-    BitAndAssign + BitOrAssign + BitXorAssign + ShlAssign<usize> + ShrAssign<usize> +
-    ?Sized
+    BitAndAssign + BitOrAssign + BitXorAssign + ShlAssign<usize> + ShrAssign<usize>
 {}
 
 // FixedNum trait is probably enough
@@ -121,7 +120,7 @@ mod tests {
     // try with some template function
     #[test]
     fn one_template_int() {
-        assert_eq!(get_one::<i32>(), 1i32);
+        assert_eq!(get_one::<u8>(), 1u8);
     }
 
     // try with some template function

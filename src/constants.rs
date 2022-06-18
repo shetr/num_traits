@@ -5,7 +5,7 @@ pub trait FixedNumBounds {
     fn max() -> Self;
 }
 
-pub trait BinaryBounds {
+pub trait BinaryBounds: Sized {
     fn binary_min() -> Self;
     fn binary_max() -> Self;
     fn binary_lower_half() -> Self;
