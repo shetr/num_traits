@@ -2,12 +2,14 @@
 mod zero;
 mod one;
 mod uabs;
+mod binary_ops;
 mod constants;
 mod number;
 
 pub use zero::Zero;
 pub use one::One;
 pub use uabs::UAbs;
+pub use binary_ops::BinaryOps;
 
 pub use constants::FixedNumBounds;
 pub use constants::BinaryBounds;

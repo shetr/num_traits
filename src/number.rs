@@ -7,7 +7,7 @@ use std::str::FromStr;
 use crate::*;
 
 // get some inspiration from Julia
-// what about Neg? it shouldn't be in unsigned nubers
+// what about Neg? it shouldn't be in unsigned numbers
 // think about the conversion operators
 // FromStr, FloatToInt, From / Into
 // conversion to some generic base for some types (probably only integers)
@@ -29,11 +29,6 @@ pub trait Number:
     Zero + One + UAbs
 {}
 
-pub trait BinaryOps:
-    BitAnd + BitOr + BitXor + Shl<usize> + Shr<usize> +
-    BitAndAssign + BitOrAssign + BitXorAssign + ShlAssign<usize> + ShrAssign<usize>
-{}
-
 // FixedNum trait is probably enough
 //pub trait Dynamic:
 //{}
@@ -43,7 +38,7 @@ pub trait FixedNum:
 {}
 
 pub trait Integer:
-    Number + BinaryOps + Rem + RemAssign
+    Number /*+ BinaryOps*/ + Rem + RemAssign
 {}
 
 // TODO: rethink how to handle signed/unsigned
@@ -94,7 +89,7 @@ pub trait Float:
 
 
 impl Number for u8 {}
-impl BinaryOps for u8 {}
+//impl BinaryOps for u8 {}
 impl FixedNum for u8 {}
 impl Integer for u8 {}
 impl UInteger for u8 {}
